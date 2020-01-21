@@ -1,0 +1,49 @@
+# DICTIONARIES AND DICTIONARY METHODS IN PYTHON 3.7
+
+# First example dictionary
+post = {"user_id": 209, "message": "D5 E5 C5 C4 G4", "language": "English",
+        "datetime": "20230215T124321Z", "location": (44.590533, -104.715556)}
+
+# Second example dictionary using dict constructor
+post2 = dict(message="SS Cotopaxi", language="English")
+
+# Append additional information to a dict constructor
+post2["user_id"] = 209
+post2["datetime"] = "19771116T093001Z"
+
+# Print a singular item from a dict constructor
+print(post2['location'])
+
+# Using 'in' to display a unique message if a value is not found
+if 'location' in post2:
+    print(post2['location'])
+else:
+    print("The post does not contain a location value.")
+
+# Using 'try' to display a unique message if a key is not found
+try:
+    print(post2['location'])
+except KeyError:
+    print("The post does not have a location.")
+
+# Using the '.get()' method to extract 'location' and place in 'loc,'
+# or display "None" if 'location' is not found
+loc = post2.get('location', None)
+print(loc)
+
+# Using the '.keys()' method to loop through dictionary and display keys as a list
+for key in post.keys():
+    value = post[key]
+    print(key, "=", value)
+
+# Using the '.items()' method to loop through dictionary and display keys and values as a list
+for key, value in post.items():
+    print(key, "=", value)
+
+# Removing a single item from a dictionary
+del post2['message']
+print(post2)
+
+# Removing all items from a dictionary
+post2.clear()
+print(post2)
