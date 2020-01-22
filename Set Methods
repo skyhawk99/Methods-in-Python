@@ -1,0 +1,59 @@
+# SET METHODS IN PYTHON 3.8
+
+# WARNING: SETS DO NOT STORE DUPLICATE VALUES AND ELEMENTS ARE UNORDERED
+
+# Declare and initialise an empty set
+example = set()
+
+# Add individual elements to the set
+example.add(42)
+example.add(False)
+example.add(3.14159)
+example.add("Thorium")
+print(example)
+
+# Use the 'len()' function to find out the length of a set
+print(len(example))
+
+# Remove individual elements from a set using 'remove()'
+example.remove(42)
+print(example)
+
+# Remove individual elements from a set using 'discard()'
+# ('discard()' does not display an error when an element that is
+# not contained in the set is attempted to be removed, unlike
+# 'remove()')
+# (50 is not an element in 'example()'
+example.discard(50)
+
+# Pre-populating a set with elements
+example2 = set([28, True, 2.71828, "Helium"])
+print(example2)
+
+# Removing all elements from a set using the 'clear()' method
+example2.clear()
+print(example2)
+
+# Example of union and intersection using sets
+# Integers 1 - 10
+odds = set([1, 3, 5, 7, 9])
+evens = set([2, 4, 6, 8, 10])
+primes = set([2, 3, 5, 7])
+composites = set([4, 6, 8, 9, 10])
+
+# Using the 'union()' method to obtain the union of odds and evens
+print(odds.union(evens))
+# Works the same in reverse
+print(evens.union(odds))
+
+# Using the 'intersection()' method to obtain the intersection of odds
+# and evens (separately) with primes
+print(odds.intersection(primes))
+print(evens.intersection(primes))
+
+# Using the 'in' keyword to determine if an element is part of a set
+print(2 in primes)
+print(6 in odds)
+
+# Using 'not in' to determine if an element is not part of a set
+print(9 not in evens)
